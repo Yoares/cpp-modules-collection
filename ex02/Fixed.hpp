@@ -32,12 +32,11 @@ class Fixed {
 		Fixed operator*(const Fixed &other) const;
 		Fixed operator/(const Fixed &other) const;
 		// The 4 increment/decrement 
-		// Pre-increment
 		Fixed &operator++(void); 
 		Fixed operator++(int);   
 		Fixed &operator--(void);
 		Fixed operator--(int);
-		// Static functions (Outside any private/public block, usually at the bottom of public)
+		// Static functions
 		static Fixed & min( Fixed &a, Fixed &b );
 		static const Fixed & min( const Fixed &a, const Fixed &b );
 		static Fixed & max( Fixed &a, Fixed &b );
