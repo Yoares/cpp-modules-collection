@@ -30,22 +30,37 @@ bool Fixed::operator!=(const Fixed &other) const{
 
 Fixed Fixed::operator+(const Fixed &other) const
 {
-    return (this->toFloat() + other.toFloat());
+    Fixed result;
+
+    result.setRawBits(this->_fixedPointValue + other.getRawBits());
+    return (result);
 }
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
-    return (this->toFloat() * other.toFloat());
+    Fixed result;
+
+    long long temp = this->_fixedPointValue * other.getRawBits();
+
+    result.setRawBits(temp >> 8);
+    return(result);
 }
 
 Fixed Fixed::operator-(const Fixed &other) const
 {
-    return (this->toFloat() - other.toFloat());
+    Fixed result;
+
+    result.setRawBits(this->_fixedPointValue - other.getRawBits());
+    return (result);
 }
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
-    return (this->toFloat() / other.toFloat());
+    Fixed result;
+    long long temp = (long long)this->_fixedPointValue << 8;
+
+    result.setRawBits(temp / other.getRawBits());
+    return (result);
 }
 
 // The 4 increment/decrement 
