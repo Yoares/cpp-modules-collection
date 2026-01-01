@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Fixed.hpp>
+#include "Fixed.hpp"
 
 class Point{
     private :
@@ -14,5 +14,6 @@ class Point{
 
         Fixed getX(void) const;
         Fixed getY(void) const;
-        bool bsp( Point const a, Point const b, Point const c, Point const point);
 };
+
+bool bsp(Point const a, Point const b, Point const c, Point const point);
