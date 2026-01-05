@@ -1,4 +1,4 @@
-NAME = FixedPoint
+NAME = Point
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Fixed.cpp overload.cpp Point.cpp
