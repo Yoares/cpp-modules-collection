@@ -4,31 +4,14 @@ int main(void)
 {
     ClapTrap a("Ares");
 
-    // Normal actions
-    a.attack("Target");
-    a.takeDamage(3);
-    a.beRepaired(2);
+    a.attack("Enemy");
+    a.takeDamage(5);
+    a.beRepaired(3);
 
-    std::cout << std::endl;
-
-    // Use all energy
-    for (int i = 0; i < 10; i++)
-        a.attack("Dummy");
-
-    std::cout << std::endl;
-
-    // Try actions with no energy
-    a.attack("Ghost");
-    a.beRepaired(5);
-
-    std::cout << std::endl;
-
-    // Kill ClapTrap
-    a.takeDamage(50);
-
-    // Try actions while dead
-    a.attack("Zombie");
-    a.beRepaired(10);
+    a.takeDamage(20);      // kill
+    a.attack("Ghost");    // should not work
+    a.beRepaired(5);      // should not work
 
     return 0;
 }
+
