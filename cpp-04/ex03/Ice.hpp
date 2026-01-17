@@ -2,7 +2,7 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
-
+#include "ICharacter.hpp"
 class Ice : public AMateria
 {
 public:
@@ -11,8 +11,6 @@ public:
     Ice& operator=(const Ice& other);
     virtual ~Ice();
     virtual AMateria* clone() const;
-    // virtual void use(ICharacter& target);e
-    // Overrides AMateria::use
-    // Applies Ice effect to target
+    virtual void use(ICharacter& target);
 };
 #endif // ICE_HPP

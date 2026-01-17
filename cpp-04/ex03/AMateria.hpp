@@ -3,12 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
 
 class AMateria
 {
     protected:
         std::string type;
-        // Stores the Materia type ("ice", "cure", etc.)
 
     public:
         AMateria();
@@ -17,11 +17,10 @@ class AMateria
         AMateria& operator=(const AMateria& other);
         virtual ~AMateria();
         const std::string& getType() const;
+
         virtual AMateria* clone() const = 0;
-        // virtual void use(ICharacter& target);
-        // Virtual (NOT pure)
-        // Default behavior may exist
-        // Can be overridden by derived classes
+
+        virtual void use(ICharacter& target);
 };
 
 #endif // AMATERIA_HPP
