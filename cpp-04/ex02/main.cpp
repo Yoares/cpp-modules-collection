@@ -13,7 +13,13 @@ int main()
 
     i->makeSound(); // Cat sound
     j->makeSound(); // Dog sound
-
+    std::cout << "------------------------------test_2--------------------------------" << std::endl;
+    Dog* dog = new Dog();
+    std::cout << "----------------------------------------" << std::endl;
+    Dog* copy = new Dog(*dog);
+    std::cout << "----------------------------------------" << std::endl;
+    delete dog; // Check if this deletes 'copy's brain (it shouldn't)
+    delete copy;
     delete j;
     delete i;
 
